@@ -1,5 +1,6 @@
 
 config global
+	option enabled '0'
 	option tcp_node1 'nil'
 	option udp_node1 'nil'
 	option socks5_node1 'nil'
@@ -30,7 +31,7 @@ config global_proxy
 	option socks5_proxy_port '1061'
 	option kcptun_port '11183'
 	option proxy_ipv6 '0'
-	
+
 config global_other
 	option use_tcping '1'
 	option auto_ping '1'
@@ -45,16 +46,14 @@ config global_other
 	option show_add_mode '0'
 
 config global_rules
+	option auto_update '0'
 	option gfwlist_update '1'
 	option chnroute_update '1'
 	option chnlist_update '1'
 	option gfwlist_version '2019-12-10'
 	option chnroute_version '2019-12-05'
 	option chnlist_version '2020-01-06'
-	option auto_update '1'
-	option week_update '7'
-	option time_update '5'
-
+	
 config global_app
 	option v2ray_file '/usr/bin/v2ray/'
 	option kcptun_client_file '/usr/bin/kcptun-client'
@@ -62,10 +61,18 @@ config global_app
 
 config global_subscribe
 	option subscribe_proxy '0'
-	option auto_update_subscribe '1'
-	option week_update_subscribe '7'
-	option time_update_subscribe '5'
+	option auto_update_subscribe '0'
 
 config auto_switch
 	option testing_time '3'
 	option enable '0'
+config acl_rule
+	option tcp_redir_ports 'default'
+	option udp_redir_ports 'default'
+	option enabled '1'
+	option remarks 'qnap'
+	option tcp_node '1'
+	option udp_node '1'
+	option proxy_mode 'disable'
+	option ip '192.168.2.128'
+
